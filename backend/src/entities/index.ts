@@ -49,6 +49,8 @@ export class Mesa {
     @OneToMany(() => Round, (round) => round.mesa)
     rounds: Round[]
 
+    @OneToMany(() => People, (people) => people.mesa)
+    peoples: People[]
 }
 
 @Entity('rounds')
@@ -72,8 +74,6 @@ export class Round {
     @ManyToOne(() => Mesa, (mesa) => mesa.rounds)
     mesa: Mesa
 
-    @OneToMany(() => People, (people) => people.round)
-    peoples: People[]
 }
 
 @Entity('peoples')
@@ -87,6 +87,6 @@ export class People {
     @Column({ type: 'double precision' })
     value: number
 
-    @ManyToOne(() => Round, (round) => round.peoples)
-    round: Round
+    @ManyToOne(() => Mesa, (mesa) => mesa.peoples)
+    mesa: Mesa
 }
