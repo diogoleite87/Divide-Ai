@@ -20,5 +20,6 @@ routes.post('/mesa', mesaController.create)
 routes.get('/mesa', mesaController.getMesas)
 routes.delete('/mesa/:id', mesaController.deleteMesa)
 routes.post('/people/:mesaid', peopleController.createPeople)
+routes.get('/people/:mesaid', peopleController.getPeoplesForMesa)
 
 export default routes

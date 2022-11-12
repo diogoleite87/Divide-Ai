@@ -40,4 +40,22 @@ export class PeopleController {
 
         return res.status(201).json(createPeople)
     }
+
+    async getPeoplesForMesa(req: Request, res: Response) {
+
+        const mesaid = Number(req.params.mesaid)
+
+        const peoples = await peopleRepository.find({
+            where: {
+                mesa: {
+                    id: mesaid,
+                    user: {
+                        id: req.user.id
+                    }
+                }
+            }
+        })
+
+        return res.status(201).json(peoples)
+    }
 }
