@@ -16,5 +16,6 @@ routes.use(authMiddleware)
 routes.get('/profile', userController.getProfile)
 routes.post('/mesa', mesaController.create)
 routes.get('/mesa', mesaController.getMesas)
+routes.delete('/mesa/:id', mesaController.deleteMesa)
 
 export default routes

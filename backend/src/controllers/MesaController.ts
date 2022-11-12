@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { Mesa } from "../entities";
 import { BadRequestError } from "../helpers/api-erros";
 import { mesaRepository } from "../repositories/mesaRepository";
 import { MesaType } from "../schemas/Models";
@@ -30,6 +29,30 @@ export class MesaController {
         })
 
         return res.status(201).json(mesas)
+    }
+
+    async deleteMesa(req: Request, res: Response) {
+
+        const id = Number(req.params.id)
+
+        const mesaExists = await mesaRepository.findOne({
+            where: {
+                id,
+                user: {
+                    id: req.user.id
+                }
+            }
+        })
+
+        if (!mesaExists) {
+            throw new BadRequestError("Mesa não existe")
+        }
+
+        await mesaRepository.delete({
+            id
+        })
+
+        return res.status(201)
     }
 
 }
