@@ -58,4 +58,25 @@ export class PeopleController {
 
         return res.status(201).json(peoples)
     }
+
+    async deletePeople(req: Request, res: Response) {
+
+        const id = Number(req.params.id)
+
+        const peopleExists = await peopleRepository.findOne({
+            where: {
+                id
+            }
+        })
+
+        if (!peopleExists) {
+            throw new BadRequestError("Pessoa não cadastrada")
+        }
+
+        await peopleRepository.delete({
+            id
+        })
+
+        return res.status(201).send()
+    }
 }
