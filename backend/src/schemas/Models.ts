@@ -7,3 +7,7 @@ export type User = {
 export type JwtPayload = {
     id: number
 }
+
+export type MesaType = {
+    name: string
+}
