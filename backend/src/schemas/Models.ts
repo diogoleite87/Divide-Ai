@@ -11,3 +11,7 @@ export type JwtPayload = {
 export type MesaType = {
     name: string
 }
+
+export type PeopleType = {
+    name: string
+}
