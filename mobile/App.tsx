@@ -17,6 +17,8 @@ import { DMSerifDisplay_400Regular_Italic } from '@expo-google-fonts/dm-serif-di
 
 import COLORS from './src/styles/theme'
 
+import { Login } from './src/screens/Login';
+
 const App: React.FC = () => {
 
     const fontsLoaded = useFonts({
@@ -43,9 +45,7 @@ const App: React.FC = () => {
             />
 
             <View>
-                <Text>
-                    awe
-                </Text>
+                <Login />
             </View>
         </ThemeProvider>
 
