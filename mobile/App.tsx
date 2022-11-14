@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import AppLoading from 'expo-app-loading'
+import { ThemeProvider } from 'styled-components/native'
 
 import {
     useFonts,
@@ -13,6 +14,8 @@ import {
 
 import { DMSans_400Regular } from '@expo-google-fonts/dm-sans'
 import { DMSerifDisplay_400Regular_Italic } from '@expo-google-fonts/dm-serif-display';
+
+import COLORS from './src/styles/theme'
 
 const App: React.FC = () => {
 
@@ -31,11 +34,14 @@ const App: React.FC = () => {
     }
 
     return (
-        <View>
-            <Text>
-                awe
-            </Text>
-        </View>
+        <ThemeProvider theme={COLORS}>
+            <View>
+                <Text>
+                    awe
+                </Text>
+            </View>
+        </ThemeProvider>
+
     )
 }
 
