@@ -35,6 +35,13 @@ const App: React.FC = () => {
 
     return (
         <ThemeProvider theme={COLORS}>
+
+            <StatusBar
+                style='dark'
+                translucent
+                backgroundColor='transparent'
+            />
+
             <View>
                 <Text>
                     awe
