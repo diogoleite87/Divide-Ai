@@ -9,7 +9,14 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/dm-sans": "^0.2.2",
+    "@expo-google-fonts/dm-serif-display": "^0.2.2",
+    "@expo-google-fonts/inter": "^0.2.2",
+    "@expo-google-fonts/poppins": "^0.2.2",
     "expo": "~47.0.3",
+    "expo-app-loading": "~2.1.1",
+    "expo-font": "~11.0.1",
+    "expo-modules-core": "~1.0.2",
     "expo-status-bar": "~1.4.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
