@@ -18,6 +18,8 @@ import { DMSerifDisplay_400Regular_Italic } from '@expo-google-fonts/dm-serif-di
 import COLORS from './src/styles/theme'
 
 import { Login } from './src/screens/Login';
+import { AuthProvider } from './src/contexts/Auth';
+import { Router } from './src/routes/Router';
 
 const App: React.FC = () => {
 
@@ -44,9 +46,7 @@ const App: React.FC = () => {
                 backgroundColor='transparent'
             />
 
-            <View>
-                <Login />
-            </View>
+            <AuthProvider><Router /></AuthProvider>
         </ThemeProvider>
 
     )
