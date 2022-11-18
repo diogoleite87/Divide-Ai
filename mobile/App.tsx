@@ -1,5 +1,4 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import AppLoading from 'expo-app-loading'
 import { ThemeProvider } from 'styled-components/native'
 
@@ -17,7 +16,6 @@ import { DMSerifDisplay_400Regular_Italic } from '@expo-google-fonts/dm-serif-di
 
 import COLORS from './src/styles/theme'
 
-import { Login } from './src/screens/Login';
 import { AuthProvider } from './src/contexts/Auth';
 import { Router } from './src/routes/Router';
 
@@ -45,7 +43,6 @@ const App: React.FC = () => {
                 translucent
                 backgroundColor='transparent'
             />
-
             <AuthProvider><Router /></AuthProvider>
         </ThemeProvider>
 
