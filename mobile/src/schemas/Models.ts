@@ -16,3 +16,11 @@ export type Profile = {
     created_at: string
     updated_at: string
 }
+
+export type Mesa = {
+    id: number
+    name: string
+    value: number
+    created_at: string
+    updated_at: string
+}
