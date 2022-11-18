@@ -38,7 +38,7 @@ export const AuthProvider: React.FC<IProps> = ({ children }): ReactElement => {
     }
 
     const signIn = async (login: LoginDTO): Promise<void> => {
-        console.log(login)
+
         await AuthService.postAuthLogin(login).then(res => {
             setAuthData(res.data)
             AsyncStorage.setItem('@AuthData', JSON.stringify(res.data))
