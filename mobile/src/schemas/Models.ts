@@ -21,6 +21,6 @@ export type Mesa = {
     id: number
     name: string
     value: number
-    created_at: string
-    updated_at: string
+    created_at: Date
+    updated_at: Date
 }

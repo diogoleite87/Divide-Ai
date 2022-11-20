@@ -5,7 +5,6 @@ import { Input } from "../../components/Input";
 import {
     Container,
     Header,
-    ButtonView,
     Title, Subtitle,
     Content,
     View,
@@ -84,7 +83,6 @@ const Register: React.FC = () => {
                     onChangeText={(text: string) => setName(text)}
                     returnKeyType="next"
                     onSubmitEditing={() => emailRef.current.focus()}
-                // icon={<IconUser fill='#616161' width={16} height={16} />}
                 />
                 <Input
                     inputRef={emailRef}
@@ -93,7 +91,6 @@ const Register: React.FC = () => {
                     onChangeText={(text: string) => setEmail(text)}
                     returnKeyType="next"
                     onSubmitEditing={() => passwordRef.current.focus()}
-                // icon={<IconUser fill='#616161' width={16} height={16} />}
                 />
                 <Input
                     inputRef={passwordRef}
@@ -102,7 +99,6 @@ const Register: React.FC = () => {
                     onChangeText={(text: string) => setPassword(text)}
                     returnKeyType="next"
                     onSubmitEditing={() => confirmPasswordRef.current.focus()}
-                // icon={<IconPassword fill='#616161' width={16} height={16} />}
                 />
                 <Input
                     inputRef={confirmPasswordRef}
@@ -111,7 +107,6 @@ const Register: React.FC = () => {
                     onChangeText={(text: string) => setConfirmPassword(text)}
                     returnKeyType="done"
                     onSubmitEditing={createUser}
-                // icon={<IconPassword fill='#616161' width={16} height={16} />}
                 />
 
             </Content>
@@ -119,7 +114,7 @@ const Register: React.FC = () => {
             <View>
                 <RegisterView>
                     <TextRegister>Já possui uma conta?</TextRegister>
-                    <TextRegisterButton onPress={() => navigation.navigate('Login')}>Entrar</TextRegisterButton>
+                    <TextRegisterButton onPress={() => navigation.navigate('Login' as never)}>Entrar</TextRegisterButton>
                 </RegisterView>
 
 

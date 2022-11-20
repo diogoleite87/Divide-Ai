@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { UserService } from '../../services/UserService'
 import { Profile } from '../../schemas/Models'
-import { useNavigation } from '@react-navigation/native';
-import { Container, ContentBody, ContentFooter, ContentHeader, MesaList, SubTitle, Title } from './styles';
-import { Mesa, Mesa as MesaHome } from '../../components/Mesa';
+import { Container, ContentBody, ContentFooter, ContentHeader, SubTitle, Title } from './styles';
+import { Mesa } from '../../components/Mesa';
 import { ButtonConfig } from '../../components/ButtonConfig';
 
 const Home: React.FC = () => {
 
     const [user, setUser] = useState<Profile | undefined>()
-
-    const navigation = useNavigation();
 
     useEffect(() => {
         UserService.getProfile().then(res => {

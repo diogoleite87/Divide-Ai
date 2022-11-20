@@ -14,13 +14,13 @@ import { MesaService } from "../../services/MesaService";
 const Mesa: React.FC = () => {
 
     const [loading, setLoading] = useState<boolean>(false)
+    const [refresh, setRefresh] = useState<boolean>(false)
     const [mesas, setMesas] = useState<MesaType[]>()
 
     const deleteMesa = async (id: number) => {
 
         setLoading(true)
         await MesaService.deleteMesa(id).then(res => {
-
         })
 
         setLoading(false)
@@ -30,11 +30,10 @@ const Mesa: React.FC = () => {
         MesaService.getMesas().then(res => {
             setMesas(res.data)
         })
-    }, [loading])
+    }, [])
 
 
     return (
-
         <MesaList
             ListHeaderComponent={<Title>Mesas Adicionadas</Title>}
             data={mesas}
@@ -43,16 +42,16 @@ const Mesa: React.FC = () => {
                 <Container>
                     <Content>
                         <Title>Nome: {item.name}</Title>
-                        <Date>Data: {item.created_at}</Date>
+                        <Date>Data: {formatDate(item.created_at)}</Date>
                         <Value>R$ {item.value}</Value>
                     </Content>
                     <ContentButton>
                         <ButtonActions>
-                            <FontAwesomeIcon icon={faPlus} size={RFValue(16)} color={theme.COLORS.WHITE} />
+                            <FontAwesomeIcon icon={faPlus} size={RFValue(8)} color={theme.COLORS.WHITE} />
                             <TextButtonActions> Abrir </TextButtonActions>
                         </ButtonActions>
                         <ButtonDelete onPress={() => deleteMesa(item.id)}>
-                            <FontAwesomeIcon icon={faTrash} size={RFValue(20)} color={theme.COLORS.RED} />
+                            <FontAwesomeIcon icon={faTrash} size={RFValue(28)} color={theme.COLORS.RED} />
                         </ButtonDelete>
                     </ContentButton>
                 </Container>
@@ -62,22 +61,7 @@ const Mesa: React.FC = () => {
             contentContainerStyle={{ width: '100%' }}
             showsVerticalScrollIndicator={false}
         />
-        // <Container>
-        //     <Content>
-        //         <Title>Nome: {mesa.name}</Title>
-        //         <Date>Data: {mesa.created_at}</Date>
-        //         <Value>R$ {mesa.value}</Value>
-        //     </Content>
-        //     <ContentButton>
-        //         <ButtonActions>
-        //             <FontAwesomeIcon icon={faPlus} size={RFValue(16)} color={theme.COLORS.WHITE} />
-        //             <TextButtonActions> Abrir </TextButtonActions>
-        //         </ButtonActions>
-        //         <ButtonDelete onPress={deleteMesa}>
-        //             <FontAwesomeIcon icon={faTrash} size={RFValue(20)} color={theme.COLORS.RED} />
-        //         </ButtonDelete>
-        //     </ContentButton>
-        // </Container>
+
     )
 }
 

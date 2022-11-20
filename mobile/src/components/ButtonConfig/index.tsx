@@ -11,7 +11,7 @@ const ButtonConfig: React.FC = () => {
     const navigation = useNavigation();
 
     return (
-        <Container onPress={() => navigation.navigate('Settings')}>
+        <Container onPress={() => navigation.navigate('Settings' as never)}>
             <FontAwesomeIcon icon={faUser} size={RFValue(20)} />
             <Title>Perfil</Title>
         </Container>

@@ -44,6 +44,7 @@ export const ButtonActions = styled.TouchableOpacity`
     flex-direction: row;
     align-items: center;
     border-radius: ${RFValue(4)}px;
+    padding: ${RFValue(6)}px;
 `
 export const TextButtonActions = styled.Text`
     color: ${({ theme }) => theme.COLORS.WHITE};

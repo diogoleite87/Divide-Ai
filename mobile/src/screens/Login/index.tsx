@@ -6,7 +6,6 @@ import { Input } from "../../components/Input";
 import {
     Container,
     ContentHeader,
-    ButtonView,
     Title, Subtitle,
     ContentBody,
     ContentFooter,
@@ -19,7 +18,6 @@ import {
 } from './styles'
 
 import { useAuth } from "../../hooks/useAuth";
-import { ButtonBack } from "../../components/ButtonBack";
 
 const Login: React.FC = () => {
 
@@ -49,7 +47,6 @@ const Login: React.FC = () => {
                     onChangeText={(text: string) => setEmail(text)}
                     returnKeyType="next"
                     onSubmitEditing={() => passwordRef.current.focus()}
-                // icon={<IconUser fill='#616161' width={16} height={16} />}
                 />
                 <Input
                     inputRef={passwordRef}
@@ -58,14 +55,13 @@ const Login: React.FC = () => {
                     onChangeText={(text: string) => setPassword(text)}
                     returnKeyType="done"
                     onSubmitEditing={() => signIn({ email, password })}
-                // icon={<IconPassword fill='#616161' width={16} height={16} />}
                 />
             </ContentBody>
 
             <ContentFooter>
                 <RegisterView>
                     <TextRegister>Ainda não tem uma conta?</TextRegister>
-                    <TextRegisterButton onPress={() => navigation.navigate('Register')}>Cadastrar</TextRegisterButton>
+                    <TextRegisterButton onPress={() => navigation.navigate('Register' as never)}>Cadastrar</TextRegisterButton>
                 </RegisterView>
 
 
